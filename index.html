@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora exclusiva para motoboys , descobrirem seu real gasto com manutenção das suas motocicletas">
+    <meta name="keywords"
+        content="motoboys, motocicletas, manutenção, gasto , ifood , uber , uber eats , delivery ,  entregas , happi">
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/script.js"></script>
+
+    <title>Calculadora Do MotoBoy</title>
+</head>
+
+<body>
+    <header>
+        <h1>Calculadora Do MotoBoy</h1>
+        <p>Descubra seu real gasto com manutenção !</p>
+    </header>
+
+    <section class="modelosmoto">
+        <h1>Selecione o Modelo da Sua motocicleta:</h1>
+    
+        <div class="nomemodelo">
+            <p>Cg 160</p>
+            <p>Factor 150</p>
+            <p>Cb Twister 250</p>
+        </div>
+    
+        <div class="box-modelo">
+           <div class="Cg-160" data-modelo="CG 160" onclick="selecionarModelo1()"></div>
+            <div class="Factor-150" data-modelo="Factor 150" onclick="selecionarModelo2()"></div>
+            <div class="CB-Twister-250" data-modelo="CB Twister 250" onclick="selecionarModelo3()"></div>
+        </div>
+    
+        <div class="quilometragem-diaria">
+            <label for="quilometragem">Quilometragem Diária (km):</label>
+            <input type="number" id="quilometragem" placeholder="Km diário" min="0">
+            <button onclick="calcularGastos()">Calcular Gastos</button>
+        </div>
+    
+    </section>
+    
+
+    <section class="manutencao">
+        <div class="painel-relacao">
+            <h1>Kit Relação</h1>
+            <p id="resultado-relacao-mensal">Gastos com kit relação por mês:</p>
+            <p id="resultado-relacao-anual">Gatos com kit relação por ano:</p>
+            <p class="comentario">*Baseado na kilometragem diaria.</p>
+            <p class="comentario">*Baseado no valor do kit relação orginal do modelo da moto.</p>
+        </div>
+
+        <div class="painel-pneu">
+            <h1>Pneus</h1>
+            <p id="resultado-pneu-mensal">Gastos com pneus por mês:</p>
+            <p  id="resultado-pneu-anual">Gastos com pneus por ano:</p>
+            <p class="comentario">*Baseado na kilometragem diaria.</p>
+            <p class="comentario">*Baseado no valor dos  médio dos pneus mais vendidos do modelo da moto.</p>
+        </div>
+
+        <div class="painel-combustivel">
+            <h1>Combustivel</h1>
+            <p id="resultado-combustivel-diario">Gastos com combustivel por dia:</p>
+            <p id="resultado-combustivel-semana">Gastos com combustivel por semana:</p>
+            <p id="resultado-combustivel-mensal">Gastos com combustivel por mês:</p>
+            <p id="resultado-combustivel-anual">Gastos com combustivel por ano:</p>
+            <p class="comentario">*Baseado na kilometragem diaria.</p>
+            <p class="comentario">*Baseado no valor do combustivel.</p>
+        </div>
+    </section>
+</body>
+
+</html>
