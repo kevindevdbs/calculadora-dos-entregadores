@@ -246,4 +246,7 @@ div.quilometragem-diaria button{
     .painel-pneu{
         margin-bottom: 20px;
     }
+    div.painel-combustivel{
+        width: 350px;
+    }
 }
