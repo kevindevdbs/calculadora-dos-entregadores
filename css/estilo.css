@@ -141,13 +141,6 @@ section.manutencao p {
     padding: 10px;
 }
 
-section.manutencao .comentario {
-    color: gray;
-    font-size: 12px;
-    padding: 4px 10px;
-    text-align: center;
-}
-
 div.painel-relacao {
     width: 300px;
     height: auto;
