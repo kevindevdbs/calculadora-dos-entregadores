@@ -12,16 +12,15 @@ body {
 
 header {
     width: 100%;
-    background-image: url(../Imagens/banner.jpg);
+    background-color: rgb(21, 21, 21);
     height: 150px;
-    background-position: center;
+    background-position: center ;
     background-size: cover;
     background-repeat: no-repeat;
-    ;
 }
 
 header img {
-    width: 100%;
+    width: 100%
 }
 
 
@@ -60,6 +59,7 @@ section.modelosmoto .box-modelo {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 50px;
 
 }
 
@@ -129,12 +129,14 @@ section.manutencao {
     flex-direction: row;
     justify-content: space-around;
     padding: 50px;
+    background-color: rgb(58, 58, 58);
 }
 
 section.manutencao h1 {
     text-align: center;
     padding: 20px;
     font-weight: bold;
+    background-color: rgb(58, 58, 58);
 }
 
 section.manutencao p {
@@ -188,7 +190,7 @@ div.painel-pneu {
 div.precos {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(58, 58, 58);
     height: auto;
     width: 100vw;
 }
