@@ -67,37 +67,74 @@
                         
                     </div>
                     <div class="gastos">
-                        <button onclick="calcularGastos()">Calcular Gastos</button>
+                        <button onclick="calcularGastos()" id="calcular-gastos">Calcular Gastos</button>
                     </div>
                 </div>
         </div>
     
     </section>
     
-
     <section class="manutencao">
-        
         <div class="painel-relacao">
             <h1>Kit Relação</h1>
-            <p id="resultado-relacao-mensal">Gastos com kit relação por mês:</p>
-            <p id="resultado-relacao-anual">Gatos com kit relação por ano:</p>
+            <div class="buttons">
+                <button onclick="mostrarResultado('relacao', 'diario')">Diário</button>
+                <span id="resultado-relacao-diario" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('relacao', 'semanal')">Semanal</button>
+                <span id="resultado-relacao-semanal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('relacao', 'mensal')">Mensal</button>
+                <span id="resultado-relacao-mensal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('relacao', 'anual')">Anual</button>
+                <span id="resultado-relacao-anual" class="resultado" style="display:none;"></span>
+            </div>
         </div>
-
+    
         <div class="painel-pneu">
             <h1>Pneus</h1>
-            <p id="resultado-pneu-mensal">Gastos com pneus por mês:</p>
-            <p  id="resultado-pneu-anual">Gastos com pneus por ano:</p>
+            <div class="buttons">
+                <button onclick="mostrarResultado('pneu', 'diario')">Diário</button>
+                <span id="resultado-pneu-diario" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('pneu', 'semanal')">Semanal</button>
+                <span id="resultado-pneu-semanal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('pneu', 'mensal')">Mensal</button>
+                <span id="resultado-pneu-mensal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('pneu', 'anual')">Anual</button>
+                <span id="resultado-pneu-anual" class="resultado" style="display:none;"></span>
+            </div>
+        </div>
+    
+        <div class="painel-combustivel">
+            <h1>Combustível</h1>
+            <div class="buttons">
+                <button onclick="mostrarResultado('combustivel', 'diario')">Diário</button>
+                <span id="resultado-combustivel-diario" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('combustivel', 'semanal')">Semanal</button>
+                <span id="resultado-combustivel-semanal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('combustivel', 'mensal')">Mensal</button>
+                <span id="resultado-combustivel-mensal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('combustivel', 'anual')">Anual</button>
+                <span id="resultado-combustivel-anual" class="resultado" style="display:none;"></span>
+            </div>
         </div>
 
-        <div class="painel-combustivel">
-            <h1>Combustivel</h1>
-            <p id="resultado-combustivel-diario">Gastos com combustivel por dia:</p>
-            <p id="resultado-combustivel-semana">Gastos com combustivel por semana:</p>
-            <p id="resultado-combustivel-mensal">Gastos com combustivel por mês:</p>
-            <p id="resultado-combustivel-anual">Gastos com combustivel por ano:</p>
-
+        <div class="painel-relacao">
+            <h1>Oleo</h1>
+            <div class="buttons">
+                <button onclick="mostrarResultado('oleo', 'diario')">Diário</button>
+                <span id="resultado-oleo-diario" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('oleo', 'semanal')">Semanal</button>
+                <span id="resultado-oleo-semanal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('oleo', 'mensal')">Mensal</button>
+                <span id="resultado-oleo-mensal" class="resultado" style="display:none;"></span>
+                <button onclick="mostrarResultado('oleo', 'anual')">Anual</button>
+                <span id="resultado-oleo-anual" class="resultado" style="display:none;"></span>
+            </div>
         </div>
     </section>
+
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/kevindevdbs">KevinDev</a></p>
+    </footer>
 </body>
 
 </html>

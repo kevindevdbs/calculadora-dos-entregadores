@@ -141,8 +141,19 @@ section.manutencao p {
     padding: 10px;
 }
 
+div.painel-oleo {
+    width: 200px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    background-color: rgb(21, 21, 21);
+    color: white;
+    font-weight: bold;
+}
+
 div.painel-relacao {
-    width: 300px;
+    width: 200px;
     height: auto;
     border: 1px solid black;
     border-radius: 10px;
@@ -153,7 +164,7 @@ div.painel-relacao {
 }
 
 div.painel-combustivel {
-    width: 380px;
+    width: 200px;
     height: auto;
     border: 1px solid black;
     border-radius: 10px;
@@ -164,7 +175,7 @@ div.painel-combustivel {
 }
 
 div.painel-pneu {
-    width: 300px;
+    width: 200px;
     height: auto;
     border: 1px solid black;
     border-radius: 10px;
@@ -354,6 +365,7 @@ div.rela input {
     margin: 20px
 }
 
+
 div.gastos> button { 
     display: flex;
     justify-content: center;
@@ -382,6 +394,44 @@ div.gastos> button:hover {
     transition: transform 0.3s, border 0.3s;
     /* Adiciona uma transição suave */
 }
+
+div.buttons button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+    margin-left: 20px;
+    background-color: rgb(86, 86, 90);
+    color: white;
+    cursor: pointer;
+}
+
+
+div.buttons span {
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+/* media query */
 
 @media screen and (max-width: 700px) {
     div.precos {
@@ -442,8 +492,7 @@ div.gastos> button:hover {
         .painel-pneu {
             margin-bottom: 20px;
         }
-
-        div.painel-combustivel {
-            width: 380px;
-        }
+        .painel-combustivel {
+            margin-bottom: 20px;
     }
+}
