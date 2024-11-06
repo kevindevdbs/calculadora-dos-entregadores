@@ -36,16 +36,47 @@
             <div class="CB-Twister-250" data-modelo="CB Twister 250" onclick="selecionarModelo3()"></div>
         </div>
     
-        <div class="quilometragem-diaria">
-            <label for="quilometragem">Quilometragem Diária (km):</label>
-            <input type="number" id="quilometragem" placeholder="Km diário" min="0">
-            <button onclick="calcularGastos()">Calcular Gastos</button>
+        <div class="precos">
+            <div class="precos1">
+                <div class="quilometragem-diaria">
+                    <label for="quilometragem">Quilometragem Diária (km):</label>
+                    <input type="number" id="quilometragem" placeholder="Km diário" min="0" step="0.01">
+                </div>
+                <div class="oleo">
+                    <label for="oleo">Valor do óleo:</label>
+                    <input type="number" id="oleo" placeholder="valor do óleo" min="0"  step="0.01">
+
+                </div>
+            </div>
+
+            <div class="precos2">
+                <div class="pneus">
+                    <label for="pneus">Valor dos 2 pneus juntos:</label>
+                    <input type="number" id="pneus" placeholder="valor dos pneus" min="0"  step="0.01">
+
+                </div>
+                <div class="combu">
+                    <label for="combu">Valor do combustível atual:</label>
+                    <input type="number" id="combu" placeholder="valor combustível" min="0" step="0.01">
+                </div>
+            </div>
+                <div class="precos3">
+                    <div class="rela">
+                        <label for="rela">Valor do kit relação:</label>
+                        <input type="number" id="rela" placeholder="valor da relação" min="0" step="0.01">
+                        
+                    </div>
+                    <div class="gastos">
+                        <button onclick="calcularGastos()">Calcular Gastos</button>
+                    </div>
+                </div>
         </div>
     
     </section>
     
 
     <section class="manutencao">
+        
         <div class="painel-relacao">
             <h1>Kit Relação</h1>
             <p id="resultado-relacao-mensal">Gastos com kit relação por mês:</p>
