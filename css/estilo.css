@@ -366,7 +366,7 @@ div.rela input {
 }
 
 
-div.gastos> button { 
+div.gastos button { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,7 +381,7 @@ div.gastos> button {
     cursor: pointer;
 }
 
-div.gastos> button:hover {
+div.gastos button:hover {
 
     color: black;
     background-color: rgb(162, 238, 87);
