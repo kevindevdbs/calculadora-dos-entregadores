@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora exclusiva para entregadores descobrirem seu real gasto com manutenção das motocicletas">
-    <meta name="keywords" content="motoboys, motocicletas, manutenção, gasto, ifood, uber, uber eats, delivery, entregas">
-    
+    <meta name="description"
+        content="Calculadora exclusiva para entregadores descobrirem seu real gasto com manutenção das motocicletas">
+    <meta name="keywords"
+        content="motoboys, motocicletas, manutenção, gasto, ifood, uber, uber eats, delivery, entregas">
+
     <title>Calculadora Do Entregador</title>
-    
+
     <link rel="stylesheet" href="./css/estilo.css">
     <script defer src="./js/script.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -22,22 +26,24 @@
             <section class="modelosmoto">
                 <h2>Selecione o Modelo da Sua Motocicleta:</h2>
 
-                <div class="modelos-info">
-                    <p>Cg 160</p>
-                    <p>Factor 150</p>
-                    <p>Cb Twister 250</p>
+                <!-- Substitua a seção de seleção de modelos por: -->
+                <div class="input-group">
+                    <label for="selecao-modelo">Selecione o Modelo da Motocicleta:</label>
+                    <select id="selecao-modelo" onchange="selecionarModelo()">
+                        <option value="">Selecione um modelo</option>
+                        <option value="CG 160">CG 160</option>
+                        <option value="Factor 150">Factor 150</option>
+                        <option value="CB Twister 250">CB Twister 250</option>
+                    </select>
                 </div>
 
-                <div class="box-modelo">
-                    <div class="Cg-160" data-modelo="CG 160" onclick="selecionarModelo1()">
-                        <img src="Imagens/cg-removebg-preview.png" alt="Cg 160">
-                    </div>
-                    <div class="Factor-150" data-modelo="Factor 150" onclick="selecionarModelo2()">
-                        <img src="Imagens/factor-removebg-preview.png" alt="Factor 150">
-                    </div>
-                    <div class="CB-Twister-250" data-modelo="CB Twister 250" onclick="selecionarModelo3()">
-                        <img src="Imagens/twister.png" alt="CB Twister 250">
-                    </div>
+                <div id="imagem-moto" class="imagem-moto" style="display: none;">
+                    <img id="img-modelo" src="" alt="Modelo da Moto">
+                </div>
+
+                <div id="consumo-moto" class="input-group" style="display: none;">
+                    <label for="km-por-litro">Quantos km sua moto faz por litro?</label>
+                    <input type="number" id="km-por-litro" placeholder="Ex: 35" min="1" step="0.1" required>
                 </div>
 
                 <div class="precos">
@@ -89,24 +95,38 @@
                     <h2>Resultados</h2>
                     <div class="resultados">
                         <!-- Resultados serão inseridos dinamicamente pelo JavaScript -->
-                        <div id="resultado-relacao-diario" class="resultado-item" style="display: none;">Kit Relação Diário: </div>
-                        <div id="resultado-relacao-semanal" class="resultado-item" style="display: none;">Kit Relação Semanal: </div>
-                        <div id="resultado-relacao-mensal" class="resultado-item" style="display: none;">Kit Relação Mensal: </div>
-                        <div id="resultado-relacao-anual" class="resultado-item" style="display: none;">Kit Relação Anual: </div>
-                        
-                        <div id="resultado-pneu-diario" class="resultado-item" style="display: none;">Pneus Diário: </div>
-                        <div id="resultado-pneu-semanal" class="resultado-item" style="display: none;">Pneus Semanal: </div>
-                        <div id="resultado-pneu-mensal" class="resultado-item" style="display: none;">Pneus Mensal: </div>
+                        <div id="resultado-relacao-diario" class="resultado-item" style="display: none;">Kit Relação
+                            Diário: </div>
+                        <div id="resultado-relacao-semanal" class="resultado-item" style="display: none;">Kit Relação
+                            Semanal: </div>
+                        <div id="resultado-relacao-mensal" class="resultado-item" style="display: none;">Kit Relação
+                            Mensal: </div>
+                        <div id="resultado-relacao-anual" class="resultado-item" style="display: none;">Kit Relação
+                            Anual: </div>
+
+                        <div id="resultado-pneu-diario" class="resultado-item" style="display: none;">Pneus Diário:
+                        </div>
+                        <div id="resultado-pneu-semanal" class="resultado-item" style="display: none;">Pneus Semanal:
+                        </div>
+                        <div id="resultado-pneu-mensal" class="resultado-item" style="display: none;">Pneus Mensal:
+                        </div>
                         <div id="resultado-pneu-anual" class="resultado-item" style="display: none;">Pneus Anual: </div>
-                        
-                        <div id="resultado-combustivel-diario" class="resultado-item" style="display: none;">Combustível Diário: </div>
-                        <div id="resultado-combustivel-semanal" class="resultado-item" style="display: none;">Combustível Semanal: </div>
-                        <div id="resultado-combustivel-mensal" class="resultado-item" style="display: none;">Combustível Mensal: </div>
-                        <div id="resultado-combustivel-anual" class="resultado-item" style="display: none;">Combustível Anual: </div>
-                        
-                        <div id="resultado-oleo-diario" class="resultado-item" style="display: none;">Óleo Diário: </div>
-                        <div id="resultado-oleo-semanal" class="resultado-item" style="display: none;">Óleo Semanal: </div>
-                        <div id="resultado-oleo-mensal" class="resultado-item" style="display: none;">Óleo Mensal: </div>
+
+                        <div id="resultado-combustivel-diario" class="resultado-item" style="display: none;">Combustível
+                            Diário: </div>
+                        <div id="resultado-combustivel-semanal" class="resultado-item" style="display: none;">
+                            Combustível Semanal: </div>
+                        <div id="resultado-combustivel-mensal" class="resultado-item" style="display: none;">Combustível
+                            Mensal: </div>
+                        <div id="resultado-combustivel-anual" class="resultado-item" style="display: none;">Combustível
+                            Anual: </div>
+
+                        <div id="resultado-oleo-diario" class="resultado-item" style="display: none;">Óleo Diário:
+                        </div>
+                        <div id="resultado-oleo-semanal" class="resultado-item" style="display: none;">Óleo Semanal:
+                        </div>
+                        <div id="resultado-oleo-mensal" class="resultado-item" style="display: none;">Óleo Mensal:
+                        </div>
                         <div id="resultado-oleo-anual" class="resultado-item" style="display: none;">Óleo Anual: </div>
                     </div>
                 </div>
@@ -118,4 +138,5 @@
         </footer>
     </div>
 </body>
+
 </html>

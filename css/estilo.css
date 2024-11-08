@@ -23,7 +23,6 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 px;
 }
 
 /* Cabeçalho */
@@ -31,8 +30,6 @@ header {
     background-color: var(--cor-primaria);
     text-align: center;
     padding: 2rem 0;
-    width: 100;
-    left: 0;
 }
 
 header h1 {
@@ -55,13 +52,6 @@ header p {
 .modelosmoto h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-}
-
-.modelos-info {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 1rem;
-    font-weight: bold;
 }
 
 .box-modelo {
@@ -98,6 +88,35 @@ header p {
     box-shadow: 0 0 15px rgba(162, 238, 87, 0.5);
 }
 
+.imagem-moto {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: var(--cor-primaria);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 60%;
+    background-color: var(--cor-secundaria);
+}
+
+.imagem-moto img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+div#consumo-moto {
+    margin-bottom: 40px;
+
+}
+
+#selecao-modelo{
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+}
+
 /* Seção de Preços e Inputs */
 .precos {
     display: grid;
@@ -125,21 +144,21 @@ header p {
     font-size: 1rem;
 }
 
+#selecao-modelo, #selecionar-gasto {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    font-size: 1rem;
+}
+
 .periodo-selecao {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
-}
-
-#selecionar-gasto {
-    padding: 0.75rem;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    font-size: 1rem;
 }
 
 #calcular-gastos {
@@ -183,6 +202,7 @@ header p {
     padding: 0.75rem;
     border-radius: 5px;
     text-align: center;
+    animation: fadeIn 0.5s ease;
 }
 
 /* Rodapé */
@@ -206,9 +226,6 @@ footer a:hover {
 
 /* Media Queries para Responsividade */
 @media screen and (max-width: 768px) {
-    div.modelos-info{
-        display: none;
-    }
     .box-modelo {
         flex-direction: column;
         align-items: center;
@@ -227,16 +244,29 @@ footer a:hover {
     .periodo-selecao {
         flex-direction: column;
     }
+
+    #consumo-moto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #consumo-moto label {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    #consumo-moto input {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
-
-
-/* Animações e Estados */
+/* Animações */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-.resultado-item {
-    animation: fadeIn 0.5s ease;
 }

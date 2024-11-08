@@ -2,39 +2,44 @@
 let modeloSelecionado = null;
 let gastosPorPeriodo = {};
 
-// Consumo de combustível por modelo (km/litro)
-const consumoCombustivel = {
-    'CG 160': 40,
-    'Factor 150': 35,
-    'CB Twister 250': 28
-};
-
 // Funções de Seleção de Modelo
-function selecionarModelo(modelo) {
-    modeloSelecionado = modelo;
-    // Adicionar lógica visual para destacar modelo selecionado
-    const modelosDiv = document.querySelectorAll('.box-modelo div');
-    modelosDiv.forEach(div => div.classList.remove('selecionado'));
-    event.currentTarget.classList.add('selecionado');
-}
-
-function selecionarModelo1() {
-    selecionarModelo('CG 160');
-}
-
-function selecionarModelo2() {
-    selecionarModelo('Factor 150');
-}
-
-function selecionarModelo3() {
-    selecionarModelo('CB Twister 250');
+function selecionarModelo() {
+    const selectModelo = document.getElementById('selecao-modelo');
+    const imagemMoto = document.getElementById('imagem-moto');
+    const imgModelo = document.getElementById('img-modelo');
+    const consumoMoto = document.getElementById('consumo-moto');
+    
+    modeloSelecionado = selectModelo.value;
+    
+    // Limpar seleção anterior
+    imgModelo.src = '';
+    imagemMoto.style.display = 'none';
+    consumoMoto.style.display = 'none';
+    
+    if (modeloSelecionado) {
+        // Definir imagem baseada no modelo
+        switch(modeloSelecionado) {
+            case 'CG 160':
+                imgModelo.src = 'Imagens/cg-removebg-preview.png';
+                break;
+            case 'Factor 150':
+                imgModelo.src = 'Imagens/factor-removebg-preview.png';
+                break;
+            case 'CB Twister 250':
+                imgModelo.src = 'Imagens/twister.png';
+                break;
+        }
+        
+        imagemMoto.style.display = 'block';
+        consumoMoto.style.display = 'block';
+    }
 }
 
 // Função para validar inputs
 function validarInputs() {
     const inputs = [
         'quilometragem', 'oleokm', 'oleo', 
-        'pneus', 'combu', 'rela'
+        'pneus', 'combu', 'rela', 'km-por-litro'
     ];
 
     for (let inputId of inputs) {
@@ -66,9 +71,9 @@ function calcularGastos() {
     const valorPneus = parseFloat(document.getElementById('pneus').value);
     const valorCombustivel = parseFloat(document.getElementById('combu').value);
     const valorRelacao = parseFloat(document.getElementById('rela').value);
+    const consumoKmPorLitro = parseFloat(document.getElementById('km-por-litro').value);
 
-    // Cálculo de consumo de combustível baseado no modelo
-    const consumoKmPorLitro = consumoCombustivel[modeloSelecionado];
+    // Cálculo de consumo de combustível baseado no input do usuário
     const litrosConsumidosDiario = quilometragemDiaria / consumoKmPorLitro;
     const gastoDiarioCombustivel = litrosConsumidosDiario * valorCombustivel;
 
@@ -133,7 +138,6 @@ function calcularEMostrarGastos() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    
     document.getElementById('calcular-gastos').addEventListener('click', calcularEMostrarGastos);
     document.getElementById('selecionar-gasto').addEventListener('change', mostrarResultados);
 });
