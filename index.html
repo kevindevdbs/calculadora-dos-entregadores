@@ -1,140 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Calculadora exclusiva para motoboys , descobrirem seu real gasto com manutenção das suas motocicletas">
-    <meta name="keywords"
-        content="motoboys, motocicletas, manutenção, gasto , ifood , uber , uber eats , delivery ,  entregas , happi">
-
-    <link rel="stylesheet" href="./css/estilo.css">
-    <script src="./js/script.js"></script>
-
+    <meta name="description" content="Calculadora exclusiva para motoboys descobrirem seu real gasto com manutenção das motocicletas">
+    <meta name="keywords" content="motoboys, motocicletas, manutenção, gasto, ifood, uber, uber eats, delivery, entregas">
+    
     <title>Calculadora Do MotoBoy</title>
+    
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script defer src="./js/script.js"></script>
 </head>
-
 <body>
-    <header>
-        <h1>Calculadora Do MotoBoy</h1>
-        <p>Descubra seu real gasto com manutenção !</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Calculadora Do MotoBoy</h1>
+            <p>Descubra seu real gasto com manutenção!</p>
+        </header>
 
-    <section class="modelosmoto">
-        <h1>Selecione o Modelo da Sua motocicleta:</h1>
-    
-        <div class="nomemodelo">
-            <p>Cg 160</p>
-            <p>Factor 150</p>
-            <p>Cb Twister 250</p>
-        </div>
-    
-        <div class="box-modelo">
-           <div class="Cg-160" data-modelo="CG 160" onclick="selecionarModelo1()"></div>
-            <div class="Factor-150" data-modelo="Factor 150" onclick="selecionarModelo2()"></div>
-            <div class="CB-Twister-250" data-modelo="CB Twister 250" onclick="selecionarModelo3()"></div>
-        </div>
-    
-        <div class="precos">
-            <div class="precos1">
-                <div class="quilometragem-diaria">
-                    <label for="quilometragem">Quilometragem Diária (km):</label>
-                    <input type="number" id="quilometragem" placeholder="Km diário" min="0" step="0.01">
-                </div>
-                <div class="oleo">
-                    <label for="oleo">Valor do óleo:</label>
-                    <input type="number" id="oleo" placeholder="valor do óleo" min="0"  step="0.01">
+        <main>
+            <section class="modelosmoto">
+                <h2>Selecione o Modelo da Sua Motocicleta:</h2>
 
+                <div class="modelos-info">
+                    <p>Cg 160</p>
+                    <p>Factor 150</p>
+                    <p>Cb Twister 250</p>
                 </div>
-            </div>
 
-            <div class="precos2">
-                <div class="pneus">
-                    <label for="pneus">Valor dos 2 pneus juntos:</label>
-                    <input type="number" id="pneus" placeholder="valor dos pneus" min="0"  step="0.01">
+                <div class="box-modelo">
+                    <div class="Cg-160" data-modelo="CG 160" onclick="selecionarModelo1()">
+                        <img src="Imagens/cg-removebg-preview.png" alt="Cg 160">
+                    </div>
+                    <div class="Factor-150" data-modelo="Factor 150" onclick="selecionarModelo2()">
+                        <img src="Imagens/factor-removebg-preview.png" alt="Factor 150">
+                    </div>
+                    <div class="CB-Twister-250" data-modelo="CB Twister 250" onclick="selecionarModelo3()">
+                        <img src="Imagens/twister.png" alt="CB Twister 250">
+                    </div>
+                </div>
 
-                </div>
-                <div class="combu">
-                    <label for="combu">Valor do combustível atual:</label>
-                    <input type="number" id="combu" placeholder="valor combustível" min="0" step="0.01">
-                </div>
-            </div>
-                <div class="precos3">
-                    <div class="rela">
+                <div class="precos">
+                    <div class="input-group">
+                        <label for="quilometragem">Quilometragem Diária (km):</label>
+                        <input type="number" id="quilometragem" placeholder="Km diário" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="oleokm">Km em que troca o óleo:</label>
+                        <input type="number" id="oleokm" placeholder="(Ex: 1000, 1500)" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="oleo">Valor do óleo:</label>
+                        <input type="number" id="oleo" placeholder="Valor do óleo" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pneus">Valor do par de pneus:</label>
+                        <input type="number" id="pneus" placeholder="Valor dos pneus" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="combu">Valor do combustível atual:</label>
+                        <input type="number" id="combu" placeholder="Valor combustível" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="input-group">
                         <label for="rela">Valor do kit relação:</label>
-                        <input type="number" id="rela" placeholder="valor da relação" min="0" step="0.01">
-                        
-                    </div>
-                    <div class="gastos">
-                        <button onclick="calcularGastos()" id="calcular-gastos">Calcular Gastos</button>
+                        <input type="number" id="rela" placeholder="Valor da relação" min="0" step="0.01" required>
                     </div>
                 </div>
-        </div>
-    
-    </section>
-    
-    <section class="manutencao">
-        <div class="painel-relacao">
-            <h1>Kit Relação</h1>
-            <div class="buttons">
-                <button onclick="mostrarResultado('relacao', 'diario')">Diário</button>
-                <span id="resultado-relacao-diario" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('relacao', 'semanal')">Semanal</button>
-                <span id="resultado-relacao-semanal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('relacao', 'mensal')">Mensal</button>
-                <span id="resultado-relacao-mensal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('relacao', 'anual')">Anual</button>
-                <span id="resultado-relacao-anual" class="resultado" style="display:none;"></span>
-            </div>
-        </div>
-    
-        <div class="painel-pneu">
-            <h1>Pneus</h1>
-            <div class="buttons">
-                <button onclick="mostrarResultado('pneu', 'diario')">Diário</button>
-                <span id="resultado-pneu-diario" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('pneu', 'semanal')">Semanal</button>
-                <span id="resultado-pneu-semanal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('pneu', 'mensal')">Mensal</button>
-                <span id="resultado-pneu-mensal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('pneu', 'anual')">Anual</button>
-                <span id="resultado-pneu-anual" class="resultado" style="display:none;"></span>
-            </div>
-        </div>
-    
-        <div class="painel-combustivel">
-            <h1>Combustível</h1>
-            <div class="buttons">
-                <button onclick="mostrarResultado('combustivel', 'diario')">Diário</button>
-                <span id="resultado-combustivel-diario" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('combustivel', 'semanal')">Semanal</button>
-                <span id="resultado-combustivel-semanal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('combustivel', 'mensal')">Mensal</button>
-                <span id="resultado-combustivel-mensal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('combustivel', 'anual')">Anual</button>
-                <span id="resultado-combustivel-anual" class="resultado" style="display:none;"></span>
-            </div>
-        </div>
 
-        <div class="painel-relacao">
-            <h1>Oleo</h1>
-            <div class="buttons">
-                <button onclick="mostrarResultado('oleo', 'diario')">Diário</button>
-                <span id="resultado-oleo-diario" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('oleo', 'semanal')">Semanal</button>
-                <span id="resultado-oleo-semanal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('oleo', 'mensal')">Mensal</button>
-                <span id="resultado-oleo-mensal" class="resultado" style="display:none;"></span>
-                <button onclick="mostrarResultado('oleo', 'anual')">Anual</button>
-                <span id="resultado-oleo-anual" class="resultado" style="display:none;"></span>
-            </div>
-        </div>
-    </section>
+                <div class="periodo-selecao">
+                    <select id="selecionar-gasto">
+                        <option value="diario">Diário</option>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensal">Mensal</option>
+                        <option value="anual">Anual</option>
+                    </select>
 
-    <footer>
-        <p>Desenvolvido por <a href="https://github.com/kevindevdbs">KevinDev</a></p>
-    </footer>
+                    <button id="calcular-gastos">Calcular Gastos</button>
+                </div>
+            </section>
+
+            <section class="manutencao">
+                <div class="painel-resultados">
+                    <h2>Resultados</h2>
+                    <div class="resultados">
+                        <!-- Resultados serão inseridos dinamicamente pelo JavaScript -->
+                        <div id="resultado-relacao-diario" class="resultado-item" style="display: none;">Kit Relação Diário: </div>
+                        <div id="resultado-relacao-semanal" class="resultado-item" style="display: none;">Kit Relação Semanal: </div>
+                        <div id="resultado-relacao-mensal" class="resultado-item" style="display: none;">Kit Relação Mensal: </div>
+                        <div id="resultado-relacao-anual" class="resultado-item" style="display: none;">Kit Relação Anual: </div>
+                        
+                        <div id="resultado-pneu-diario" class="resultado-item" style="display: none;">Pneus Diário: </div>
+                        <div id="resultado-pneu-semanal" class="resultado-item" style="display: none;">Pneus Semanal: </div>
+                        <div id="resultado-pneu-mensal" class="resultado-item" style="display: none;">Pneus Mensal: </div>
+                        <div id="resultado-pneu-anual" class="resultado-item" style="display: none;">Pneus Anual: </div>
+                        
+                        <div id="resultado-combustivel-diario" class="resultado-item" style="display: none;">Combustível Diário: </div>
+                        <div id="resultado-combustivel-semanal" class="resultado-item" style="display: none;">Combustível Semanal: </div>
+                        <div id="resultado-combustivel-mensal" class="resultado-item" style="display: none;">Combustível Mensal: </div>
+                        <div id="resultado-combustivel-anual" class="resultado-item" style="display: none;">Combustível Anual: </div>
+                        
+                        <div id="resultado-oleo-diario" class="resultado-item" style="display: none;">Óleo Diário: </div>
+                        <div id="resultado-oleo-semanal" class="resultado-item" style="display: none;">Óleo Semanal: </div>
+                        <div id="resultado-oleo-mensal" class="resultado-item" style="display: none;">Óleo Mensal: </div>
+                        <div id="resultado-oleo-anual" class="resultado-item" style="display: none;">Óleo Anual: </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desenvolvido por <a href="https://github.com/kevindevdbs" target="_blank">KevinDev</a></p>
+        </footer>
+    </div>
 </body>
-
 </html>
