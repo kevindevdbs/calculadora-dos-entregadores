@@ -91,12 +91,12 @@ header p {
 .imagem-moto {
     display: flex;
     justify-content: center;
-    margin: auto;
-    margin-bottom: 50px;
+    align-items: center;
+    
     background-color: var(--cor-primaria);
-    padding: 1rem;
+    margin: auto;
     border-radius: 10px;
-    width: 60%;
+    width: 100%;
     background-color: var(--cor-secundaria);
 }
 
@@ -104,7 +104,7 @@ header p {
     max-width: 300px;
     max-height: 300px;
     object-fit: contain;
-    margin: auto;
+    margin-bottom: 50px;
 }
 
 div#consumo-moto {
